@@ -87,5 +87,4 @@ plt.text(-59.4,-41, f'Ciudad de Buenos Aires', fontsize=8)
 plt.text(-68,-54.5, T(f1[16]), fontsize=11)
 
 plt.title(f"Distribución del apellido {apellido} (2022)")
-
-savefig(f'/home/def/Imágenes/mapas/{apellido}.png', dpi=199)
+plt.show()
