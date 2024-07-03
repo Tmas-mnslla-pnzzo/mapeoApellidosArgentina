@@ -48,6 +48,7 @@ Hs[Hs.index('Provincia de Neuquén')]='Provincia del Neuquén'
 
 pais = gpd.read_file('/home/def/Descargas/Provincia/ign_provincia.shp')
 fig, ax = plt.subplots()
+inset_ax = ax.inset_axes([.63, .18, .3, .3])
 fig.set_size_inches([7,7])
 
 f1=[]
@@ -60,14 +61,10 @@ for str1 in pais['FNA']:
 
 cmap1=cm.Blues(np.array(f1)/np.mean(f1))
 cmap2=list([(mpl.colors.rgb2hex(i)) for i in cmap1])
+pais['color'] = cmap2
 
 ax.set_ylim([-57,-21])
 ax.set_xlim([-75,-50])
-
-inset_ax = ax.inset_axes([.63, .18, .3, .3])
-
-pais['color'] = cmap2
-
 inset_ax.set_ylim([-34.75,-34.50])
 inset_ax.set_xlim([-58.55,-58.30])
 
